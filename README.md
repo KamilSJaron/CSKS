@@ -37,3 +37,16 @@ KMC3 is run on `reads.fa` with the k-mer length set to 21.
 ### Spectra
 A k-mer spectrum is generated from the KMC DB and the temporary files are deleted.
 
+## New features
+
+### Genome generated out of a reference
+
+Generating fabricated reference genomes from a template genome. If scaffolds are assigned to chromosomes, a tsv file can be provided together with a chromosome that should be samples (can be also A/X if just autosome vs sex chromosome needs to be distinguished). The newly sinthetised genome will either be out of windows stiched together (if -w is >0) or our of whole scaffolds (up to the size of desired generated genome). This is not a very efficient implementation, I tried to put something quick together. I recommend high -w for high quality reference genome templates.
+
+For all options see
+
+```
+code/generate_reference_subset.py -h
+```
+
+The idea is that this way-out known genome can mimic some real-genome composition and other properties that would be hard to reproduce with any type of direct sequence simulation.
